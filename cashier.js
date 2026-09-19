@@ -1,0 +1,13 @@
+if(r){
+  if(!window.qrLock){
+    window.qrLock=true;
+    try{
+      add(parseQRText(r.data));
+    }catch(e){
+      document.getElementById('scanStatus').textContent=e.message;
+    }
+    setTimeout(()=>{
+      window.qrLock=false;
+    },800);
+  }
+}
