@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>商品登録・QR発行</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><h1>商品登録・QR発行</h1></header>
+<main class="container">
+<section class="card">
+<h2>商品を登録</h2>
+<label>商品名<input id="name" placeholder="チョコオールド"></label>
+<label>価格<input id="price" type="number" min="0" inputmode="numeric" placeholder="150"></label>
+<label>最大在庫<input id="maxStock" type="number" min="0" max="999999" inputmode="numeric" placeholder="50"></label>
+<button id="addBtn" class="primary">登録してQRを発行</button>
+<p id="status"></p>
+</section>
+<section class="card">
+<h2>登録済み商品</h2>
+<div id="products"></div>
+</section>
+</main>
+
+<div id="qrModal" class="modal" hidden>
+<div class="modal-card">
+<button id="closeBtn" class="close">×</button>
+<h2 id="qrTitle">QRコード</h2>
+<div id="qrcode"></div>
+<p>このQRコードを商品に貼り付けてください。</p>
+<button id="printBtn" class="primary">印刷</button>
+</div>
+</div>
+
+<!-- 以前正常に動作していた版と同じQR生成ライブラリを使用 -->
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script src="crypto.js"></script>
+<script src="products.js"></script>
+</body></html>
