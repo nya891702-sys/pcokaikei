@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>レジ</title><link rel="stylesheet" href="style.css"></head>
+<body><header><h1>レジ</h1><button id="historyButton">会計履歴</button></header>
+<main class="register">
+<section class="card">
+<h2>QR読み取り</h2>
+<div class="camera"><video id="video" autoplay playsinline muted></video><div class="scanbox"></div></div>
+<div class="buttons"><button id="start" class="primary">カメラ起動</button><button id="stop">停止</button></div>
+<p id="status">商品QRを読み取ってください。</p>
+</section>
+<section class="card">
+<h2>お会計</h2><div id="items">商品がありません</div>
+<div class="total">合計 <span id="total">¥0</span></div>
+<button id="pay" class="primary big">会計する</button>
+<button id="clear">カートを空にする</button>
+</section>
+</main>
+<div id="historyModal" class="modal" hidden><div class="modal-card wide">
+<button id="historyClose" class="close">×</button><h2>会計履歴</h2><div id="history"></div>
+<button id="historyClear">履歴を全消去</button></div></div>
+<script src="qr-reader.js"></script><script src="crypto.js"></script><script src="register.js"></script>
+</body></html>
